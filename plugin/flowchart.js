@@ -706,10 +706,11 @@
             this.no_direction = this.no_direction || "right", this.text.attr({
                 x: 2 * this.textMargin
             });
-            var width = this.text.getBBox().width + 3 * this.textMargin;
+            var width = this.text.getBBox().width +  3 * this.textMargin;
             width += width / 2;
             var height = this.text.getBBox().height + 2 * this.textMargin;
-            height += height / 2, height = Math.max(.5 * width, height);
+            height += height / 4
+            height = Math.max(.25 * width, height);
             var startX = width / 4, startY = height / 4;
             this.text.attr({
                 x: startX + this.textMargin / 2
