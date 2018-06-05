@@ -9,9 +9,9 @@ function! vim_flow_diag#Generate_flow_diagram(pluginPath)
   let tmpDir = "/tmp/vim-js-flow/"
   call system("mkdir " . tmpDir)
   "TODO check file already exists?
-  call system("cp " . a:pluginPath . '/underscore-min.js' . " " . tmpDir)
+  call system("cp " . a:pluginPath . '/underscore.min.js' . " " . tmpDir)
   call system("cp " . a:pluginPath . '/raphael-min.js' . " " . tmpDir)
-  call system("cp " . a:pluginPath . '/flowchart.min.js' . " " . tmpDir)
+  call system("cp " . a:pluginPath . '/flowchart.js' . " " . tmpDir)
 
   let out = tmpDir . "out.html"
   call system("cp " . tmpl . " " . out)
@@ -23,5 +23,5 @@ function! vim_flow_diag#Generate_flow_diagram(pluginPath)
   silent :w!
   :bd
   execute "tabn " . originTab
-
+  call system("open " . out)
 endfunction

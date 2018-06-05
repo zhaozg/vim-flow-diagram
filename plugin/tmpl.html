@@ -1,8 +1,8 @@
 <html>
   <head>
-    <script src="underscore-min.js"></script>
-    <script src="raphael-min.js"></script>
-    <script src="flowchart.min.js"></script>
+    <script src="http://flowchart.js.org/underscore-min.js"></script>
+    <script src="http://flowchart.js.org/raphael-min.js"></script>
+    <script src="flowchart.js"></script>
   </head>
   <body>
     <div id="diagram"></div>
@@ -10,6 +10,9 @@
       var diagram = flowchart.parse(`
           `);
       diagram.drawSVG('diagram', {
+          'line-length': 10,
+          'text-margin': 10,
+          'maxWidth': 10
       });
     </script>
   </body>
