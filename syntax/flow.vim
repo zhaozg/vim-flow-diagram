@@ -1,7 +1,6 @@
-if exists("b:flow_syntax")
+if exists("b:current_syntax")
   finish
 endif
-let b:flow_syntax = 1
 
 syntax match flowType /start:/
 syntax match flowType /end:/
@@ -13,5 +12,7 @@ syntax match flowOperator /=>/
 syntax match flowOperator /->/
 syntax region flowString matchgroup=Special start=/\v:\s/ end=/\v$/
 highlight link flowType Type
-highlight link flowOperator Operator
+highlight link flowOperator Keyword
 highlight link flowString String
+
+let b:current_syntax = 'flow'
