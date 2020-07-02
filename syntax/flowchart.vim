@@ -1,5 +1,6 @@
-if exists("b:current_syntax")
-  finish
+if exists('b:current_syntax')
+  let s:current_syntax = b:current_syntax
+  unlet b:current_syntax
 endif
 
 syntax match flowType /start:/
@@ -15,4 +16,8 @@ highlight link flowType Type
 highlight link flowOperator Keyword
 highlight link flowString String
 
-let b:current_syntax = 'flow'
+if exists('s:current_syntax')
+  let b:current_syntax = s:current_syntax
+else
+  let b:current_syntax = 'flowchart'
+endif
